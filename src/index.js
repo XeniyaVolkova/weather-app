@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import Weather from "./Weather";
 import "./Weather.css";
+import "./BottomRow.css";
 
 ReactDOM.render(
   <React.StrictMode>
     <Weather />
+    <p className="linkGitHub"><a href="https://github.com/XeniyaVolkova/weather-app">Open-source code</a> by Xeniya V.</p>
+
   </React.StrictMode>,
   document.getElementById('root')
 );

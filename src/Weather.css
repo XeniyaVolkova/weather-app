@@ -103,3 +103,6 @@ button:focus {
 .centerPicture {
   margin-top: 90px;
 }
+p {
+  text-align: center;
+}
