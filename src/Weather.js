@@ -17,7 +17,7 @@ export default function Weather() {
       <div className="row">
         <div className="col-2">
           <img
-            src="https://static.wixstatic.com/media/3688c9_adc96acbe63b45778c2273ab6768fba3~mv2.png" alt="Girl picture"
+            src="https://static.wixstatic.com/media/3688c9_adc96acbe63b45778c2273ab6768fba3~mv2.png" alt="Girl"
             width="250"
           />
         </div>
@@ -54,7 +54,7 @@ export default function Weather() {
               <img
                 className="centerPicture"
                 src="https://static.wixstatic.com/media/3688c9_ca89456f9c5f4fffba53ee040c1bdc03~mv2.png"
-                alt="Weather Icon" width="150"
+                alt="weatherIcon" width="150"
               />
             </div>
           </div>
@@ -68,7 +68,7 @@ export default function Weather() {
         </div>
 
         <div class="col-9">
-          <div className="row no-gutters" className="weather-forecast"></div>
+         <div className="row no-gutters weather-forecast"></div>
         </div>
       </div>
     </div>
