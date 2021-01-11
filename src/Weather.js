@@ -18,7 +18,7 @@ export default function Weather() {
         <div className="col-2">
           <img
             src="https://static.wixstatic.com/media/3688c9_adc96acbe63b45778c2273ab6768fba3~mv2.png" alt="Girl"
-            width="250"
+            width="200"
           />
         </div>
         <div className="col-xs-10 col-centered">
@@ -54,7 +54,7 @@ export default function Weather() {
               <img
                 className="centerPicture"
                 src="https://static.wixstatic.com/media/3688c9_ca89456f9c5f4fffba53ee040c1bdc03~mv2.png"
-                alt="weatherIcon" width="150"
+                alt="weatherIcon" width="120"
               />
             </div>
           </div>

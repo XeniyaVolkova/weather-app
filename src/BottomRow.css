@@ -11,14 +11,16 @@
   text-align: center;
   color: black;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   padding-top: 0;
   margin-top: 0;
-  line-height: 2;
+  margin-bottom: 11px;
+  line-height: 1.8;
 }
 
 .currentTime {
   text-align: center;
+  font-size: 14px;
 }
 
 #temperature {
@@ -29,4 +31,17 @@
   margin-top: 90px;
   margin-left: 10px;
   line-height: 8px;
+}
+
+.allGirls {
+  text-align: center;
+  margin-top: 0;
+}
+
+.linkGitHub {
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.8;
+  margin-bottom: 5px;
+  margin-top: 0;
 }
