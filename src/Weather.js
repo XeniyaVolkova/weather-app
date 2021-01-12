@@ -10,6 +10,7 @@ let [city, setCity] = useState("");
   let [description, setDescription] = useState("");
   let [humidity, setHumidity] = useState("");
   let [wind, setWind] = useState("");
+  let [location, setLocation] =useState("");
   let [icon, setIcon] = useState("");
   let iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
 
@@ -29,6 +30,7 @@ let [city, setCity] = useState("");
     setHumidity(response.data.main.humidity);
     setDescription(response.data.weather[0].main);
     setWind(Math.round(response.data.wind.speed));
+    setLocation (response.data.name);
     setIcon(response.data.weather[0].icon);
   }
     
@@ -84,7 +86,7 @@ if (temperature) {
       </div>
       <div className="row no-gutters">
         <div className="col-xs-3 col-centered">
-          <p className="cityName">Astana</p>
+          <p className="cityName">{location}</p>
           <p className="currentDate">Last updated: 18:00</p>
           <p className="currentTime">Monday, 17:00</p>
         </div>
@@ -145,7 +147,7 @@ if (temperature) {
       </div>
       <div className="row no-gutters">
         <div className="col-xs-3 col-centered">
-          <p className="cityName">Astana</p>
+          <p className="cityName"></p>
           <p className="currentDate">Last updated: 18:00</p>
           <p className="currentTime">Monday, 17:00</p>
         </div>
