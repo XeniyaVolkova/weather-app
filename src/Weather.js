@@ -3,7 +3,7 @@ import axios from "axios";
 import "./Weather.css";
 import "./BottomRow.css";
 
-export default function Weather() {
+export default function Weather(props) {
 let [city, setCity] = useState("");
   let [temperature, setTemperature] = useState("");
   let [feel, setFeel] =useState("");
@@ -15,7 +15,7 @@ let [city, setCity] = useState("");
   let iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
 
   function handleSubmit(event) {
-    event.preventDefault();
+  event.preventDefault();
     let apiKey = "9724f817a3ad04371bf18467e4cb2880";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(url).then(showTemperature);
@@ -99,7 +99,12 @@ if (temperature) {
 
   );
   } else {
-    return (
+      let city="New York";
+    let apiKey = "9724f817a3ad04371bf18467e4cb2880";
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(url).then(showTemperature);
+    
+            return (
       <div className="Weather">
       <div className="row">
         <div className="col-2">
@@ -109,12 +114,12 @@ if (temperature) {
           />
         </div>
         <div className="col-xs-10 col-centered">
-          <form onSubmit={handleSubmit}>
+          <form id="search-form" onSubmit={handleSubmit}>
             <div className="input-icon">
               <input
                 type="text"
                 placeholder="Enter a city..."
-                className="search"
+                className="city-input"
                 autoComplete="off"
                 autoFocus="on"
                 onChange={updateCity}
@@ -132,22 +137,24 @@ if (temperature) {
           <div className="row">
             <div className="col-6">
               <div className="mainInfo">
-                <p>Temperature: </p>
-                <p>Feels like: </p>
-          <p>Humidity: </p>
-          <p>Description: </p>
-          <p>Wind: </p>
+                <p>Temperature: {temperature}°C</p>
+                <p>Feels like: {feel}°C</p>
+          <p>Humidity: {humidity}%</p>
+          <p>Description: {description}</p>
+          <p>Wind: {wind} km/h</p>
           
               </div>
             </div>
             <div className="col-6">
-                         </div>
+              <p> <img src={iconUrl} alt={description} className="centerPicture" />
+          </p>
+            </div>
           </div>
         </div>
       </div>
       <div className="row no-gutters">
         <div className="col-xs-3 col-centered">
-          <p className="cityName"></p>
+          <p className="cityName">{location}</p>
           <p className="currentDate">Last updated: 18:00</p>
           <p className="currentTime">Monday, 17:00</p>
         </div>
