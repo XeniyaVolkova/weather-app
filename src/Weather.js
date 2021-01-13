@@ -2,9 +2,11 @@ import React, {useState} from "react";
 import axios from "axios";
 import "./Weather.css";
 import "./BottomRow.css";
+import FormattedDate from "./FormattedDate";
+
 
 export default function Weather(props) {
-let [city, setCity] = useState("");
+  let [city, setCity] = useState("");
   let [temperature, setTemperature] = useState("");
   let [feel, setFeel] =useState("");
   let [description, setDescription] = useState("");
@@ -13,8 +15,8 @@ let [city, setCity] = useState("");
   let [location, setLocation] =useState("");
   let [icon, setIcon] = useState("");
   let iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
-
-  function handleSubmit(event) {
+  let [date, setDate] = useState("");
+    function handleSubmit(event) {
   event.preventDefault();
     let apiKey = "9724f817a3ad04371bf18467e4cb2880";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -32,6 +34,8 @@ let [city, setCity] = useState("");
     setWind(Math.round(response.data.wind.speed));
     setLocation (response.data.name);
     setIcon(response.data.weather[0].icon);
+    setDate (new Date(response,date.dt*1000));
+   
   }
     
   
@@ -87,7 +91,7 @@ if (temperature) {
       <div className="row no-gutters">
         <div className="col-xs-3 col-centered">
           <p className="cityName">{location}</p>
-          <p className="currentDate">Last updated: 18:00</p>
+          <p className="currentDate">Last updated: <FormattedDate date={date} /></p>
           <p className="currentTime">Monday, 17:00</p>
         </div>
 
@@ -99,12 +103,12 @@ if (temperature) {
 
   );
   } else {
-      let city="New York";
+    let city="New York";
     let apiKey = "9724f817a3ad04371bf18467e4cb2880";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(url).then(showTemperature);
     
-            return (
+      return (
       <div className="Weather">
       <div className="row">
         <div className="col-2">
@@ -155,7 +159,7 @@ if (temperature) {
       <div className="row no-gutters">
         <div className="col-xs-3 col-centered">
           <p className="cityName">{location}</p>
-          <p className="currentDate">Last updated: 18:00</p>
+          <p className="currentDate">Last updated: <FormattedDate date={date} /></p>
           <p className="currentTime">Monday, 17:00</p>
         </div>
 
