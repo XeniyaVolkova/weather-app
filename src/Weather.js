@@ -34,7 +34,7 @@ export default function Weather(props) {
     setWind(Math.round(response.data.wind.speed));
     setLocation (response.data.name);
     setIcon(response.data.weather[0].icon);
-    setDate (new Date(response,date.dt*1000));
+    setDate (new Date(response.date.dt*1000));
    
   }
     
