@@ -21,7 +21,7 @@ if (minutes < 10) {
   }
   
 return (
-<div>{day} {hours}:{minutes}</div>
+<div>{day}, {hours}:{minutes}</div>
     );
 
 }
