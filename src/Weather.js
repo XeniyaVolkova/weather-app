@@ -94,7 +94,7 @@ if (weatherData.ready) {
         <div className="col-xs-3 col-centered">
           <p className="cityName">{weatherData.city}</p>
           <p className="currentDate">Last updated: <FormattedDate date={weatherData.date} /> </p>
-                  </div>
+          </div>
 
         <div class="col-9">
          <div className="row no-gutters weather-forecast"></div>
