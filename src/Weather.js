@@ -20,6 +20,7 @@ export default function Weather(props) {
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].main,
       iconUrl:  `/visuals/${response.data.weather[0].icon}.png`,
+      girlIcon: `/styles/${response.data.weather[0].icon}.png`,
       wind: Math.round(response.data.wind.speed),
       city: response.data.name,
     });
@@ -46,7 +47,7 @@ if (weatherData.ready) {
       <div className="row">
         <div className="col-2">
           <img
-            src="https://static.wixstatic.com/media/3688c9_adc96acbe63b45778c2273ab6768fba3~mv2.png" alt="Girl"
+            src={weatherData.girlIcon}  alt={weatherData.description}
             width="200"
           />
         </div>
