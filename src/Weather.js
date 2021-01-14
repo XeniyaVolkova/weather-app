@@ -8,11 +8,10 @@ import FormattedDate from "./FormattedDate";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
-  let [icon, setIcon] = useState("");
-  let iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+ 
 
    function handleResponse(response) {
-    setIcon(response.data.weather[0].icon);
+    
     setWeatherData({
       ready: true,
       temperature: Math.round(response.data.main.temp),
@@ -20,7 +19,7 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].main,
-      icon: response.data.weather[0].icon,
+      iconUrl:  `/visuals/${response.data.weather[0].icon}.png`,
       wind: Math.round(response.data.wind.speed),
       city: response.data.name,
     });
@@ -84,7 +83,7 @@ if (weatherData.ready) {
               </div>
             </div>
             <div className="col-6">
-            <p> <img src={iconUrl} alt="description" className="mainInfo" />
+            <p> <img src={weatherData.iconUrl} width="100" alt={weatherData.description} className="centerPicture" />
           </p>
             </div>
           </div>
