@@ -98,10 +98,16 @@ button:focus {
 
 .mainInfo {
   margin-top: 90px;
-  margin-left: 70px;
-  font-size: 14px;
+  margin-left: 55px;
+  font-size: 13px;
 }
 
 .centerPicture {
   margin-top: 90px;
+}
+
+a:hover {
+  color: black;
+  text-decoration: underline;
+  font-weight: bolder;
 }

@@ -1,3 +1,12 @@
+.Weather {
+  background-color: #faf4f4;
+  border: 3px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 55px auto;
+  max-width: 800px;
+  margin-bottom: 15px;
+}
 .cityName {
   padding-top: 26px;
   margin-bottom: 17;
@@ -15,12 +24,7 @@
   padding-top: 0;
   margin-top: 0;
   margin-bottom: 11px;
-  line-height: 1.8;
-}
-
-.currentTime {
-  text-align: center;
-  font-size: 14px;
+  line-height: 2;
 }
 
 #temperature {
@@ -46,4 +50,28 @@
   line-height: 1.8;
   margin-bottom: 5px;
   margin-top: 0;
+}
+.fiveDays {
+  padding-top: 13px;
+  margin-bottom: 17;
+  padding-bottom: 7px;
+  font-size: 16px;
+  line-height: 0.2;
+  text-align: center;
+  font-family: "Glegoo", serif;
+}
+.forecast-icons {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+}
+.highs-lows {
+  text-align: center;
+  color: black;
+  text-align: center;
+  font-size: 14px;
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 11px;
+  line-height: 1.8;
 }

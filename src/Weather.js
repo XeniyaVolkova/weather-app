@@ -3,12 +3,14 @@ import axios from "axios";
 import "./Weather.css";
 import "./BottomRow.css";
 import FormattedDate from "./FormattedDate";
+import WeatherTemperature from "./WeatherTemperature";
+import WeatherForecast from "./WeatherForecast ";
 
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
- 
+  const[unit, setUnit]= useState("celsius");
 
    function handleResponse(response) {
     
@@ -87,9 +89,9 @@ if (weatherData.ready) {
           <div className="row">
             <div className="col-6">
               <div className="mainInfo">
-                <p>Temperature: {weatherData.temperature}°C</p>
-                <p>Feels like: {weatherData.feel}°C</p>
-          <p>Humidity: {weatherData.humidity}%</p>
+                <WeatherTemperature  celsius={weatherData.temperature}  />
+                <p>Feels like: {weatherData.feel}°</p>
+                     <p>Humidity: {weatherData.humidity}%</p>
           <p>Description: {weatherData.description}</p>
           <p>Wind: {weatherData.wind} km/h</p>
           
@@ -103,14 +105,14 @@ if (weatherData.ready) {
         </div>
       </div>
       <div className="row no-gutters">
-        <div className="col-xs-3 col-centered">
+        <div className="col-xs-3 ">
           <p className="cityName">{weatherData.city}</p>
           <p className="currentDate">Last updated: <FormattedDate date={weatherData.date} /> </p>
           </div>
-
-        <div class="col-9">
-         <div className="row no-gutters weather-forecast"></div>
-        </div>
+       
+        <div className="col-xs-9 col-centered">
+       <WeatherForecast city={weatherData.city} unit={unit}/>
+       </div>
       </div>
     </div>
 
