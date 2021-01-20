@@ -111,7 +111,7 @@ if (weatherData.ready) {
           </div>
        
         <div className="col-xs-9 col-centered">
-       <WeatherForecast city={weatherData.city} unit={unit}/>
+       <WeatherForecast city={weatherData.city} unit={unit} setUnit={setUnit}/>
        </div>
       </div>
     </div>
