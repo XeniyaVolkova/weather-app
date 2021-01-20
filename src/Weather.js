@@ -62,7 +62,7 @@ if (weatherData.ready) {
         <div className="col-2">
           <img
             src={weatherData.girlIcon}  alt={weatherData.description}
-            width="200"
+            width="200" 
           />
         </div>
         <div className="col-xs-10 col-centered">
