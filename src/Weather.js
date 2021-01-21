@@ -60,7 +60,7 @@ if (weatherData.ready) {
     <div className="Weather">
       <div className="row">
         <div className="col-2">
-          <img
+          <img className="girlIcon"
             src={weatherData.girlIcon}  alt={weatherData.description}
             width="200" 
           />
@@ -104,8 +104,8 @@ if (weatherData.ready) {
           </div>
         </div>
       </div>
-      <div className="row no-gutters">
-        <div className="col-xs-3 ">
+      <div className="row">
+        <div className="col-xs-3 col-centered">
           <p className="cityName">{weatherData.city}</p>
           <p className="currentDate">Last updated: <FormattedDate date={weatherData.date} /> </p>
           </div>
