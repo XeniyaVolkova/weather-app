@@ -15,9 +15,7 @@ export default function WeatherTemperature(props) {
   function fahrenheit() {
     return (props.celsius * 9) / 5 + 32;
   }
-  function feelFahrenheit() {
-    return (props.celsiusFeel * 9) / 5 + 32;
-  }
+  
 ​
   if (props.unit === "celsius") {
     return (
@@ -46,8 +44,7 @@ export default function WeatherTemperature(props) {
             | °F
           </span>
         </p>
-        
-      </div>
+              </div>
     );
   }
 }
