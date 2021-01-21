@@ -31,7 +31,7 @@ if(loaded && props.city === forecast.city.name) {
  let units="metric";
  let apiUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=${units}`;
 axios.get(apiUrl).then(handleForecastResponse);
-return null
+return "Loading...";
 
 }
 }
