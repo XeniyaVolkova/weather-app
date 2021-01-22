@@ -4,7 +4,7 @@ import "./Weather.css";
 import "./BottomRow.css";
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
-import WeatherForecast from "/.WeatherForecast";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });

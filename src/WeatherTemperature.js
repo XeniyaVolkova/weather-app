@@ -13,9 +13,7 @@ export default function WeatherTemperature(props) {
   function fahrenheit() {
     return (props.celsius * 9) / 5 + 32;
   }
-  function feelFahrenheit() {
-    return (props.celsiusFeel * 9) / 5 + 32;
-  }
+ 
   if (props.unit === "celsius") {
     return (
       <div className="weatherTemperature">
@@ -26,8 +24,7 @@ export default function WeatherTemperature(props) {
             <a href="/" onClick={showFahrenheit}>
               °F
             </a>
-            <br />
-            <p>Feels like: {props.celsiusFeel}°</p>
+            
           </span>
         </p>
       </div>
@@ -44,7 +41,7 @@ export default function WeatherTemperature(props) {
             | °F
           </span>
         </p>
-        <p>Feels like: {Math.round(feelFahrenheit())}°</p>
+        
       </div>
     );
   }
