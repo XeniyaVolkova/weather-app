@@ -29,7 +29,7 @@ if(loaded && props.city === forecast.city.name) {
 } else {
  let apiKey = "9724f817a3ad04371bf18467e4cb2880";
  let units="metric";
- let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?=${props.city}&appid=${apiKey}&units=${units}`;
+ let apiUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=${units}`;
 axios.get(apiUrl).then(handleForecastResponse);
 return "Loading...";
 
